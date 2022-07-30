@@ -8,6 +8,7 @@ XColorSquare::XColorSquare(QWidget *parent) :
     colorChar('0'),nSquareWidth(248),mouseStatus(Nothing)
 {
     this->setCursor(Qt::CrossCursor);
+    this->setStyleSheet("border:1px; border-style:solid;border-color:black;");
 }
 
 void XColorSquare::setSquareWidth(int width)
@@ -125,8 +126,6 @@ void XColorSquare::paintEvent(QPaintEvent *)
     painter.drawEllipse(QPointF(colorX*maxDist,
                                 colorY*maxDist),
                         selectorWidth, selectorWidth);
-
-     this->setStyleSheet("border:1px; border-style:solid;border-color:black;");
 }
 
 void XColorSquare::mousePressEvent(QMouseEvent *ev)
